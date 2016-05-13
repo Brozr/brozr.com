@@ -1,0 +1,239 @@
+body {
+    font-family: Roboto-Regular;
+    font-size: 18px;
+    color: #000000;
+}
+.logo {
+    /*position:absolute;
+  top:10px;
+  left:15px;*/
+    padding-top: 44px;
+    padding-left: 90px;
+}
+nav {
+    padding-top: 44px;
+    padding-right: 90px;
+}
+nav li {
+    font-family: Roboto-Light;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+nav li:nth-child(n+2) {
+    padding-left: 60px;
+}
+nav li a, nav li a:focus, nav li a:visited {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+nav li a:hover, nav li a.active {
+    text-decoration: none;
+    color: #FFFFFF;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #1FA8B1;
+}
+nav li a.active {
+    font-family: Roboto-Medium;
+}
+.nav-inline {
+    display: inline-block;
+}
+.nav-inline li {
+    display: inline-block;
+}
+.bg-header {
+    background: url(../images/bg.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.bg-section3 {
+    background-color: #ECF1F5;
+}
+.bg-section4 {
+    background: url(../images/bg-pattern.png) fixed;
+}
+.bg-section6 {
+    background-color: #FFF;
+}
+.punchline {
+    padding-top: 150px;
+    padding-bottom: 140px;
+    font-family: Roboto-Thin;
+    font-size: 64px;
+    color: #FFFFFF;
+    line-height: 80px;
+}
+.punchline-subtitle {
+    font-family: Roboto-Medium;
+    font-size: 45px;
+}
+.head-arrow {
+    margin-bottom: 65px;
+}
+.spacer-inner-md-xs {
+    padding-bottom: 60px;
+}
+.spacer-inner-md-s {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.spacer-inner-md-m {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+.spacer-inner-md-l {
+    padding-top: 160px;
+    padding-bottom: 160px;
+}
+h2 {
+    font-family: Roboto-Regular;
+    font-size: 36px;
+}
+.spacer-title-classic h2 {
+    padding-bottom: 40px;
+}
+.spacer-title-small h2 {
+    padding-bottom: 10px;
+}
+.no-margin {
+    margin: 0 0 0 0;
+}
+.no-padding {
+    padding: 0 0 0 0;
+}
+.white-title {
+    color: #FFF;
+}
+h3 {
+    font-family: Roboto-Medium;
+    font-size: 24px;
+    color: #1FA8B1;
+    line-height: 30px;
+}
+.line-height-p {
+    line-height: 30px;
+}
+.big-text {
+    font-family: Roboto-Medium;
+    font-size: 50px;
+    line-height: 62px;
+}
+.medium-text {
+    font-size: 21px;
+}
+.text-light {
+    font-family: Roboto-Light;
+}
+.intro-line {
+    width: 66px;
+    height: 4px;
+    background-color: #1FA8B1;
+}
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.shadowbox {
+    box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.15), 0px 30px 40px 0px rgba(0, 0, 0, 0.35);
+}
+.teambox {
+    width: 280px;
+    height: 280px;
+    background-color: #3E556B;
+    font-family: Roboto-Light;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+.thibbox {
+    background-image: url(../images/thib.png);
+}
+.thombox {
+    background-image: url(../images/thom.png);
+}
+.joinusbox {
+    display: block;
+    padding-top: 75px;
+}
+button.btn-type {
+    display: block;
+    background: #1FA8B1;
+    border-radius: 8px;
+    color: #FFFFFF;
+}
+button:hover.btn-type,
+button:focus.btn-type {
+    display: block;
+    background: #60987B;
+    text-decoration: none;
+}
+a.btn-type {
+    display: inline-block;
+    background: #1FA8B1;
+    border-radius: 8px;
+    color: #FFFFFF;
+}
+a:hover.btn-type {
+    display: inline-block;
+    background: #60987B;
+    border-radius: 8px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.btn-joinus {
+    font-size: 16px;
+    margin: 30px auto 0 auto;
+}
+.sizetype-box-wh-s {
+    width: 190px;
+    height: 48px;
+}
+.sizetype-box-h-m {
+    height: 80px;
+}
+.sizetype-box-h-l {
+    height: 190px !important;
+}
+.sizetype-box-wh-m {
+    width: 360px;
+    height: 80px;
+}
+.btn-joinus span {
+    display: block;
+    padding-top: 14px;
+}
+form .row {
+    /*padding: 0px 10px 20px 10px;
+  margin: 0px 0px 0px 0px;*/
+    padding-bottom: 30px;
+}
+form .form-control {
+    font-family: Roboto-ThinItalic;
+    font-size: 20px;
+    color: #000;
+    padding: 0px 0px 0px 20px !important;
+}
+form textarea.form-control {
+    font-family: Roboto-ThinItalic;
+    font-size: 20px;
+    color: #000;
+    padding: 20px 0px 0px 20px !important;
+}
+.footer-text {
+    font-family: Roboto-Light;
+    color: #000;
+    font-size: 13px;
+    padding: 33px 0 0 0;
+}
+.footer-text a {
+    margin-left: 25px;
+}
+.footer {
+    height: 80px;
+}
+.social-media {
+    margin: 20px 0 0 0;
+}
