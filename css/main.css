@@ -1,12 +1,10 @@
 body {
-    font-family: Roboto-Regular;
+    font-family: Roboto;
     font-size: 18px;
     color: #000000;
+    font-weight: 400;
 }
 .logo {
-    /*position:absolute;
-  top:10px;
-  left:15px;*/
     padding-top: 44px;
     padding-left: 90px;
 }
@@ -15,10 +13,10 @@ nav {
     padding-right: 90px;
 }
 nav li {
-    font-family: Roboto-Light;
     font-size: 14px;
     text-decoration: none;
     text-transform: uppercase;
+    font-weight: 300;
 }
 nav li:nth-child(n+2) {
     padding-left: 60px;
@@ -34,7 +32,7 @@ nav li a:hover, nav li a.active {
     border-bottom: 3px solid #1FA8B1;
 }
 nav li a.active {
-    font-family: Roboto-Medium;
+    font-weight: 500;
 }
 .nav-inline {
     display: inline-block;
@@ -61,14 +59,11 @@ nav li a.active {
 .punchline {
     padding-top: 150px;
     padding-bottom: 140px;
-    font-family: Roboto-Thin;
-    font-size: 64px;
     color: #FFFFFF;
-    line-height: 80px;
 }
 .punchline-subtitle {
-    font-family: Roboto-Medium;
     font-size: 45px;
+    font-weight: 500;
 }
 .head-arrow {
     margin-bottom: 65px;
@@ -88,9 +83,14 @@ nav li a.active {
     padding-top: 160px;
     padding-bottom: 160px;
 }
+h1 {
+    font-size: 64px;
+    line-height: 80px;
+    font-weight: 100;
+}
 h2 {
-    font-family: Roboto-Regular;
     font-size: 36px;
+    font-weight: 500;
 }
 .spacer-title-classic h2 {
     padding-bottom: 40px;
@@ -108,24 +108,24 @@ h2 {
     color: #FFF;
 }
 h3 {
-    font-family: Roboto-Medium;
     font-size: 24px;
     color: #1FA8B1;
     line-height: 30px;
+    font-weight: 500;
 }
 .line-height-p {
     line-height: 30px;
 }
 .big-text {
-    font-family: Roboto-Medium;
     font-size: 50px;
     line-height: 62px;
+    font-weight: 500;
 }
 .medium-text {
     font-size: 21px;
 }
 .text-light {
-    font-family: Roboto-Light;
+    font-weight: 300;
 }
 .intro-line {
     width: 66px;
@@ -141,12 +141,17 @@ h3 {
     box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.15), 0px 30px 40px 0px rgba(0, 0, 0, 0.35);
 }
 .teambox {
+    display: inline-block;
     width: 280px;
     height: 280px;
     background-color: #3E556B;
-    font-family: Roboto-Light;
     font-size: 30px;
     color: #FFFFFF;
+    float: left;
+    font-weight: 300;
+}
+.teambox-container {
+    display: inline-block;
 }
 .thibbox {
     background-image: url(../images/thib.png);
@@ -155,7 +160,6 @@ h3 {
     background-image: url(../images/thom.png);
 }
 .joinusbox {
-    display: block;
     padding-top: 75px;
 }
 button.btn-type {
@@ -163,9 +167,9 @@ button.btn-type {
     background: #1FA8B1;
     border-radius: 8px;
     color: #FFFFFF;
+    border: 0;
 }
-button:hover.btn-type,
-button:focus.btn-type {
+button:hover.btn-type, button:focus.btn-type {
     display: block;
     background: #60987B;
     text-decoration: none;
@@ -186,10 +190,7 @@ a:hover.btn-type {
 .btn-joinus {
     font-size: 16px;
     margin: 30px auto 0 auto;
-}
-.sizetype-box-wh-s {
-    width: 190px;
-    height: 48px;
+    padding: 14px 70px;
 }
 .sizetype-box-h-m {
     height: 80px;
@@ -211,19 +212,20 @@ form .row {
     padding-bottom: 30px;
 }
 form .form-control {
-    font-family: Roboto-ThinItalic;
     font-size: 20px;
     color: #000;
     padding: 0px 0px 0px 20px !important;
+    font-style: italic;
+    font-weight: 300;
 }
 form textarea.form-control {
-    font-family: Roboto-ThinItalic;
     font-size: 20px;
     color: #000;
     padding: 20px 0px 0px 20px !important;
+    font-style: italic;
+    font-weight: 300;
 }
 .footer-text {
-    font-family: Roboto-Light;
     color: #000;
     font-size: 13px;
     padding: 33px 0 0 0;
