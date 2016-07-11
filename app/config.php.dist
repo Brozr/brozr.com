@@ -1,0 +1,14 @@
+<?php
+
+return [
+    'contact_email' => 'email@domain.com',
+    'contact_subject' => 'Subject',
+    'contact_template' => 'Email body',
+    'smtp' => [
+        'host' => 'smtp.gmail.com',
+        'auth_mode' => 'login',
+        'encryption' => 'ssl',
+        'username' => 'email@gmail.com',
+        'password' => 'password',
+    ]
+];
