@@ -126,7 +126,7 @@
                 method: 'POST'
             }).success(function () {
                 $form[0].reset();
-                $button.text('Merci');
+                $button.text('Thank you');
                 var message = $('<div></div>').addClass('alert alert-success').text('Message sent, thank you!');
                 $messageContainer.html(message);
             }).fail(function (response) {
