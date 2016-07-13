@@ -11,16 +11,16 @@
 
     function Navigation() {
         var elements = {};
-        var sectionPositions = [];
+        var menuElement = [];
         var $element = $('.js-navigation');
         var $logo = $('.logo img');
         var defaultLogo = $logo.attr('src');
         var $body = $('html, body');
         var length = 0;
-        var currentElement = $element.find('a.active').attr('href');
+        var currentIndex = 0;
 
         buildPositions();
-        length = sectionPositions.length;
+        length = menuElement.length;
 
         onScroll();
 
@@ -44,7 +44,7 @@
 
             // reset values
             elements = {};
-            sectionPositions = [];
+            menuElement = [];
 
             $(document).find('a.js-scrollable-link').each(function (i, el) {
                 var $link = $(el);
@@ -54,7 +54,6 @@
                 offsetTop = offsetTop < 0 ? 0 : offsetTop;
 
                 elements[id] = {
-                    $link: $link,
                     offsetTop: offsetTop
                 };
 
@@ -62,9 +61,10 @@
                     return;
                 }
 
-                sectionPositions.push({
+                menuElement.push({
                     id: id,
-                    position: offsetTop
+                    $link: $link,
+                    sectionPosition: offsetTop
                 });
             });
         }
@@ -80,22 +80,27 @@
                 $logo.attr('src', defaultLogo);
             }
 
-            for (var i = 0; i < length; i++) {
-                if (i+1 < length && current >= sectionPositions[i+1].position) {
-                    continue;
-                }
+            for (var i = currentIndex; i < length; i++) {
+                var prev = i === 0 ? 0 : i-1;
+                var next = i+1 === length ? i : i+1;
 
-                var id = sectionPositions[i].id;
-
-                if (currentElement === id) {
+                // In the section
+                if (current >= menuElement[i].sectionPosition && (current < menuElement[next].sectionPosition || i === next) && currentIndex === i) {
                     break;
                 }
 
-                elements[currentElement].$link.removeClass('active');
-                elements[id].$link.addClass('active');
-                currentElement = id;
+                if (current < menuElement[i].sectionPosition) {
+                    // Down to up
+                    menuElement[currentIndex].$link.removeClass('active');
+                    menuElement[prev].$link.addClass('active');
+                    currentIndex = prev;
+                    break;
+                } else {
+                    menuElement[currentIndex].$link.removeClass('active');
+                    menuElement[next].$link.addClass('active');
+                    currentIndex = next;
+                }
 
-                break;
             }
         }
     }
@@ -111,7 +116,7 @@
             var $button = $element.find('button[type="submit"]');
             var currentValue = $button.text();
             $button.prop('disabled', true);
-            $button.text('Envoi en cours...');
+            $button.text('In progress...');
 
             var $form = $(this);
 
@@ -122,7 +127,7 @@
             }).success(function () {
                 $form[0].reset();
                 $button.text('Merci');
-                var message = $('<div></div>').addClass('alert alert-success').text('Message envoyé');
+                var message = $('<div></div>').addClass('alert alert-success').text('Message sent, thank you!');
                 $messageContainer.html(message);
             }).fail(function (response) {
                 var content = response.responseJSON;

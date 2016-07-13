@@ -26,7 +26,7 @@ function sendResponse($statusCode = 200, $errorMessage = null)
         );
     }
 
-    header($_SERVER['SERVER_PROTOCOL'] . ' '. sprintf('%d %s', $statusCode, $statusCodeMap[$statusCode]));
+    header(sprintf('%s %d %s', $_SERVER['SERVER_PROTOCOL'], $statusCode, $statusCodeMap[$statusCode]));
 
     if ($errorMessage && $statusCode !== 204) {
         header('Content-Type: application/json; charset=utf-8');
@@ -48,7 +48,7 @@ $data = array_merge([
 
 // Validate the data
 if (empty($data['name']) || !filter_var($data['email'], FILTER_VALIDATE_EMAIL) || empty($data['message'])) {
-    sendResponse(400, 'Un ou plusieurs champs sont vides ou invalides');
+    sendResponse(400, 'One or many fields are empty or invalid.');
 }
 
 // Smtp transport
@@ -70,16 +70,15 @@ $messageBody = str_replace(
 
 $message = Swift_Message::newInstance();
 $message->setSubject($config['contact_subject'])
-    ->setFrom($data['email'])
+    ->setFrom($config['contact_email'])
     ->setTo($config['contact_email'])
     ->setBody($messageBody)
-    ->setContentType('plain/text')
 ;
 
 $sent = $mailer->send($message);
 
 if ($sent === 0) {
-    sendResponse(400, 'Le message n\'a pas pu être envoyé.');
+    sendResponse(400, 'An error is happened...');
 }
 
 sendResponse(204);

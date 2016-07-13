@@ -148,6 +148,10 @@ nav a.active {
     margin-bottom: 100px;
 }
 
+.social-media {
+    text-align: right;
+}
+
 /** Punchline **/
 .punchline {
     padding-top: 150px;
@@ -242,6 +246,7 @@ a.btn-type {
     background: #1FA8B1;
     border-radius: 8px;
     color: #FFFFFF;
+    text-decoration: none;
 }
 a:hover.btn-type {
     display: inline-block;
@@ -259,6 +264,25 @@ a:hover.btn-type {
 .btn-joinus span {
     display: block;
     padding-top: 14px;
+}
+
+/** Bro contact **/
+.bro {
+    position: relative;
+    overflow: hidden;
+}
+
+.bro-contact {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 10px;
+    background-color: rgba(0,0,0, 0.5);
+}
+
+.bro-contact-name {
+    text-align: center;
 }
 
 /** Form **/
@@ -372,10 +396,6 @@ form textarea.form-control {
         padding-right: 0;
         text-align: center;
     }
-
-    .social-media {
-        text-align: right;
-    }
 }
 
 @media (max-width: 767px) {
@@ -450,6 +470,28 @@ form textarea.form-control {
         }
         to {
             background-color: transparent;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .bro-contact {
+        bottom: -100px;
+    }
+
+    .bro:hover .bro-contact {
+        bottom: 0;
+        animation-duration: 0.2s;
+        animation-name: show-details;
+    }
+
+    @keyframes show-details {
+        from {
+            bottom: -100px;
+        }
+
+        to {
+            bottom: 0;
         }
     }
 }
