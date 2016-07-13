@@ -442,7 +442,10 @@ form textarea.form-control {
         font-size: 26px;
     }
 
-    nav .icon-nav a:hover,
+    .nav .icon-nav a:hover {
+        border-bottom: none;
+    }
+
     nav .icon-nav a.active {
         border-bottom: 5px solid #1FA8B1;
     }
